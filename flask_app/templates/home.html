@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Points of Interest</title>
+  </head>
+<body style='font-family="sans-serif"'>
+    <h1> Points of Interest </h1>
+    <h2> <i> Pin-point your next travel destination </i> </h2>
+    <h3> <br/> How it works:  </h3>
+    <p><b>Enter your favorite travel destination.</b>
+      <br/><b> &#8594; The recommender suggests travel destinations with similar Points of Interest.</b>
+      <br/>
+      <form action = "/results" method = "POST">
+        <p>Favorite destination: <input type='text' name="city"></p>
+        <p>City, State <i>(e.g. Peninsula, Ohio)</i></p>
+        <fieldset>
+          <legend><b>Optional: </b>Restrict results to locations within 200 miles of a major city.</legend>
+          <select name="reference_city">
+          {% for reference_city in major_cities %}
+            <option value="{{ reference_city }}">{{ reference_city }}</option>
+          {% endfor %}
+           </select>
+       </fieldset>
+      </form>
+    	</p>
+  <body>
+</html>
